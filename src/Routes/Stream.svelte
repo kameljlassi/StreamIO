@@ -22,7 +22,7 @@
 }
 .button a {
   display: flex;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 25px;
@@ -57,7 +57,7 @@
 }
 
 .about-us a {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   color: white;
   font-size: 15px;

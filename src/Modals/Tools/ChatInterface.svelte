@@ -22,7 +22,7 @@
         justify-content: center;
         color: white;
         padding: 20px 15px;
-        font-family: roboto;
+        font-family: 'Roboto', sans-serif;
         font-size: 40px;
         font-weight: lighter;
     }

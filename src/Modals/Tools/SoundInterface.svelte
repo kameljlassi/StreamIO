@@ -40,7 +40,7 @@ let selected = sounds[1]
 
 <style>
 * {
-    font-family: roboto;
+    font-family: 'Roboto', sans-serif;
     color: white;
 }
 

@@ -1,7 +1,7 @@
 
 <script>
-export let live = true;
-export let recordings = false;
+export let live = false;
+export let recordings = true;
 export let setting = false;
 function recording () {
     recordings = true;
@@ -23,7 +23,7 @@ function settings(){
 <style>
     * {
         color: white;
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
         font-size: 20px;
     }

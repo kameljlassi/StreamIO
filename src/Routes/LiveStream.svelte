@@ -4,8 +4,8 @@
   import StreamModal from "../Modals/StreamModal.svelte"
   import RecordingsModal from "../Modals/RecordingsModal.svelte"
   import Settings from "../Modals/Settings.svelte"
-  let live=true;
-  let recordings=false;
+  let live=false;
+  let recordings=true;
   let setting = false;
 </script>
 

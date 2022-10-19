@@ -2,8 +2,11 @@
     import Dropdown from 'sv-bootstrap-dropdown';
 	let dropdownTriggerHelp;
     let dropdownTriggerAccount;
-
+    import {auth} from '../firebase'
     // Code only for Replit
+    const logout = () => {
+        auth.signOut()
+    }
     window.process = {
         env: 'production'
 }
@@ -13,7 +16,7 @@
     @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css");
     * {
         color: white;
-        font-family: Roboto;
+        font-family: 'Roboto', sans-serif;
         font-style: normal;
     }
 
@@ -145,7 +148,7 @@
         <div class="Accountdrop"slot="DropdownMenu">
             <button class="dropdown-item" type="button">Profile</button>
             <div class="line"></div>
-            <button class="dropdown-item" type="button">Logout</button>
+            <button on:click={logout} class="dropdown-item" type="button">Logout</button>
        </div>
        </Dropdown>
     </div>

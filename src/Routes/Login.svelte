@@ -1,5 +1,12 @@
 <script>
-import { t, locale, locales } from "../i18n";
+    import { t, locale, locales } from "../i18n";
+    import {auth} from '../firebase'
+
+    let email;
+    let password;
+    const handleLogin = () => {
+        auth.signInWithEmailAndPassword(email.value, password.value)
+    }
 </script>
 
 
@@ -34,7 +41,7 @@ import { t, locale, locales } from "../i18n";
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 20px;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
 }
 
 .login-block input {
@@ -101,6 +108,14 @@ import { t, locale, locales } from "../i18n";
   height: 100%;
 }
 
+.incorrect-pw {
+    color: black;
+    background-color: red;
+    padding: 13px;
+    border-radius: 10px;
+    opacity: 50%;
+    border-style: solid;
+}
 </style>
 
 
@@ -108,11 +123,14 @@ import { t, locale, locales } from "../i18n";
 
 <div class="background">
 <div class="container">
-    <div class="login-block">
+    <form on:submit|preventDefault={handleLogin} class="login-block">
         <h1>{$t("login.title")}</h1>
-        <input type="text" value="" placeholder="{$t("login.username")}" id="username" />
-        <input type="password" value="" placeholder="{$t("login.password")}" id="password" />
-        <button>{$t("login.button")}</button>
+        <input bind:this={email} type="text" value="" placeholder="{$t("login.username")}" id="username" />
+        <input bind:this={password} type="password" value="" placeholder="{$t("login.password")}" id="password" />
+        <button type="submit">{$t("login.button")}</button>
+    </form>
+    <div class="incorrect-pw">
+        incorrect user name or password
     </div>
 </div>
 </div>
